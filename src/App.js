@@ -18,15 +18,18 @@ export default function App() {
   const [weekMeals, setWeekMeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-  const [selectedDay, setSelectedDay] = useState(getCurrentDay()); // Auto-select current day
+  const [selectedDay, setSelectedDay] = useState(getCurrentDay());
+  const [username, setUsername] = useState("");
 
   // Check for existing auth on mount
   useEffect(() => {
     const storedAuth = localStorage.getItem("camuAuth");
     const storedEmail = localStorage.getItem("userEmail");
+    const storedName = localStorage.getItem("name");
     if (storedAuth) {
       setAuthData(JSON.parse(storedAuth));
       setUserEmail(storedEmail || "");
+      setUsername(storedName || "");
       setIsAuthenticated(true);
     }
   }, []);
@@ -54,6 +57,7 @@ export default function App() {
     setAuthData(null);
     setWeekMeals([]);
     setUserEmail("");
+    setUsername("");
   };
 
 const fetchWeekMenu = async () => {
@@ -140,7 +144,7 @@ const fetchWeekMenu = async () => {
                 <h1 className="text-2xl md:text-3xl font-bold text-white">
                   College Mess Menu
                 </h1>
-                <p className="text-blue-100 text-sm">{userEmail}</p>
+                <p className="text-blue-100 text-sm">{username}</p>
               </div>
             </div>
             <button
