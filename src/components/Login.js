@@ -70,7 +70,7 @@ export default function Login({ onLoginSuccess }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                  placeholder="yourname@bennett.edu.in"
+                  placeholder="enrollment@bennett.edu.in"
                   required
                 />
               </div>
