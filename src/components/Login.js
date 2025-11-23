@@ -29,6 +29,7 @@ export default function Login({ onLoginSuccess }) {
         localStorage.setItem("stuId", response.data.stuId);
         localStorage.setItem("instId", response.data.instId);
         localStorage.setItem("userEmail", email);
+        localStorage.setItem("name", response.data.name);
         localStorage.setItem("camuAuth", JSON.stringify(response.data));
         localStorage.setItem("isAuthenticated", "true"); // Flag for persistent login
         onLoginSuccess(response.data);
