@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import MealCard from "./components/MealCard";
 import MealProgressCard from "./components/MealProgressCard";
 import { FaGithub, FaUtensils, FaSignOutAlt, FaCalendarWeek } from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   // Get current day automatically
