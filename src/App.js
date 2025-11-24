@@ -197,7 +197,8 @@ export default function App() {
 
       {/* QR MODAL */}
       {qrModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        
           <div className="bg-white rounded-xl shadow-xl p-6 max-w-sm text-center">
             <h2 className="text-xl font-semibold mb-4 text-blue-700">Your Mess QR Code</h2>
             <img src={qrImage} alt="QR Code" className="w-56 mx-auto" />
