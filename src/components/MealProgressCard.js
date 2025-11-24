@@ -72,7 +72,7 @@ export default function MealProgressCard({ weekMeals }) {
   // Remaining meals are total - served - missed
   const remainingMeals = totalMeals - servedMeals - missedMeals;
   
-  const percentage = totalMeals > 0 ? Math.round((servedMeals / totalMeals) * 100) : 0;
+  const percentage = totalMeals > 0 ? Math.round((servedMeals / (missedMeals + servedMeals) ) * 100) : 0;
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-blue-100">
@@ -111,7 +111,7 @@ export default function MealProgressCard({ weekMeals }) {
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-4xl font-bold text-blue-600">{percentage}%</span>
-            <span className="text-sm text-gray-500">Availed</span>
+            <span className="text-sm text-gray-500">Availed till now</span>
           </div>
         </div>
 
