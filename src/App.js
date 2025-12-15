@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Login from "./components/Login";
 import MealCard from "./components/MealCard";
-import MealProgressCard from "./components/MealProgressCard";
 import QRCode from "qrcode";
 import { FaGithub, FaUtensils, FaSignOutAlt, FaCalendarWeek, FaQrcode } from "react-icons/fa";
+// eslint-disable-next-line
 import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
@@ -142,7 +142,7 @@ export default function App() {
   if (!isAuthenticated) return <Login onLoginSuccess={handleLoginSuccess} />;
 
   const groupedMeals = weekMeals.reduce((acc, meal) => {
-    const day = meal.msCde.match(/\(([^)]+)\)/)?.[1] || "Unknown";
+    const day = meal.msCde.match(/\(([^)]+)\)/)?.[1] || {userEmail};
     if (!acc[day]) acc[day] = [];
     acc[day].push(meal);
     return acc;
@@ -223,7 +223,7 @@ export default function App() {
 
         {!loading && weekMeals.length > 0 && (
           <>
-            <MealProgressCard weekMeals={weekMeals} />
+            {/* <MealProgressCard weekMeals={weekMeals} /> */}
 
             {/* Day Selector */}
             <div className="mb-8">
