@@ -282,16 +282,16 @@ export default function App() {
       <footer className="bg-white border-t-2 border-blue-100 mt-16 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-6">
           <a
-            href="https://github.com/Mbajaj0807/mycamu-mess-menu-backend"
+            href="https://github.com/Mbajaj0807"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 hover:text-blue-600 bg-blue-50 px-4 py-2 rounded-lg border-2 border-blue-100 hover:border-blue-300"
           >
             <FaGithub size={20} />
-            Backend Repository
+            Made By Manan Bajaj 
           </a>
 
-          <a
+          {/* <a
             href="https://github.com/Mbajaj0807/mycamu-mess-menu-frontend"
             target="_blank"
             rel="noopener noreferrer"
@@ -299,7 +299,7 @@ export default function App() {
           >
             <FaGithub size={20} />
             Frontend Repository
-          </a>
+          </a> */}
         </div>
       </footer>
     </div>
